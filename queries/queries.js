@@ -157,7 +157,7 @@ const deleteStudent = (req, res) => {
 const studentFilter = (req, res) => {
   const { name, age, page = 1, size = 10 } = req.query; // Request/query params
   let query =
-    "SELECT t1.id, t1.first_name, t1.last_name, t1.age, t2.department_name FROM student AS t1 INNER JOIN department AS t2 ON t1.department_id = t2.id";
+    "SELECT t1.id, t1.first_name, t1.last_name, t1.age, t2.department FROM student AS t1 INNER JOIN department AS t2 ON t1.department_id = t2.id";
   let queryParams = [];
   const offset = (page - 1) * size;
 
